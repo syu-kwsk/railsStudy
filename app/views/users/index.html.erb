@@ -1,6 +1,16 @@
 <h1>TOP</h1>
 
-<%= link_to "新規登録", new_user_path %>
+
 <% @users.each do |user| %>
-  <%= link_to user.name, user_path(user) %>
+<%= link_to user.name, user_path(user) %>
 <% end %>
+<% if logged_in? %>
+ <p>current user is</p><%= @current_user.name %>
+ <%= link_to "Log out", logout_path, method: "delete" %>
+<% else %>
+ <%= link_to "新規登録", new_user_path %>
+ <%= link_to "Log in", login_path %>
+<% end %>
+
+
+
