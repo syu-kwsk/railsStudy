@@ -1,3 +1,7 @@
 <h1>User <%= @user.id %></h1>
 
 <%= @user.name %>
+
+ <%= link_to "Log out", logout_path, method: "delete" %>
+ <%= link_to "top", root_path %>
+
